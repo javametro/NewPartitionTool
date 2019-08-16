@@ -1,4 +1,6 @@
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using System.Windows;
 
 namespace DiskLayout.ViewModel
 {
@@ -19,6 +21,27 @@ namespace DiskLayout.ViewModel
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
+        /// 
+        private RelayCommand getDiskInfoCommand;
+        public RelayCommand GetDiskInfoCommand
+        {
+            get
+            {
+                if(getDiskInfoCommand == null)
+                {
+                    getDiskInfoCommand = new RelayCommand(ShowMessage);
+                }
+
+                return getDiskInfoCommand;
+            }
+
+            set
+            {
+                getDiskInfoCommand = value;
+            }
+        }
+
+        public MainViewModel mainViewModel;
         public MainViewModel()
         {
             ////if (IsInDesignMode)
@@ -29,6 +52,15 @@ namespace DiskLayout.ViewModel
             ////{
             ////    // Code runs "for real"
             ////}
+            ///
+
         }
+
+        private void ShowMessage()
+        {
+            MessageBox.Show("HelloWorld");
+        }
+
+      
     }
 }

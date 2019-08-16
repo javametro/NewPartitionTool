@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiskLayout"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        >
+
+    <Window.DataContext>
+        <Binding Path="Main" Source="{StaticResource Locator}"></Binding>
+    </Window.DataContext>
+    
     <Grid>
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
             <TextBlock Text="当前系统磁盘分区情况："></TextBlock>
-            <Button Content="获取分区情况"></Button>
+            <Button Content="获取分区情况" Command="{Binding GetDiskInfoCommand}"></Button>
         </StackPanel>
         
     </Grid>
