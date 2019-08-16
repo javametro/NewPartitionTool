@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBlock Text="当前系统磁盘分区情况："></TextBlock>
+            <Button Content="获取分区情况"></Button>
+        </StackPanel>
         
     </Grid>
 </Window>
